@@ -1,0 +1,74 @@
+Luis Alfonso Peralta Chacón - 1231721
+============================================
+    INTELIGENCIA ARTIFICIAL
+============================================
+Resultados: 
+==============================================
+Modelo      | Accuracy | Precision | Recall   | F1-Score
+----------- | -------- | --------- | -------- | --------
+SVM         | 58.92%   | 34.70%    | 73.41%   | 47.12%
+Perceptrón  | 71.10%   | 35.35%    | 19.19%   | 24.88%
+Red Neural  | 77.56%   | 55.71%    | 48.71%   | 51.97%
+
+Según lo obtenido el mejor modelo es la Red Neuronal, o al menos, el más balanceado. 
+ Red Neuronal
+- F1-Score: 51.97% (0.5197)
+- Accuracy: 77.56%
+=================================================================
+Discusión de resultados: 
+==================================================================
+
+La red neuronal obtuvo el F1-Score con 51.97%, superando al SVM (47.12%) y al Perceptrón (24.88%). 
+logró por así decirlo el mejor "compromiso" entre identificar correctamente a los candidatos que cambiarán de trabajo, 
+con un recall = 48.71% , y minimizar los falsos positivos, presenta una precision = 55.71%, además de tener la mayor accuracy general, de 77.56%.
+
+======================================
+Mención de Pros y Contras que se observaron en pruebas de Limpieza, procesamiento y pasos extras 
+==================================
+
+SVM
+Pros:
+- Tiene un buen recall (73.41%), lo que quiere decir que identifica a la mayoría de candidatos que sí se cambiarían de trabajo.
+- Modelo robusto y bien establecido en machine learning
+- permitió un desbalance de clases adecuado con class_weight='balanced', sin esto. me daba muy bajo. casi cero. 
+- Buena capacidad de generalización
+
+Contras:
+- Presentó el Accuracy más bajo (58.92%)
+- Por su Precision (34.70%), se entiende que generará muchos falsos positivos. 
+- es más costoso computacionalmente para los dataset más grandes, creería que se tiene que manejar mejor algunos hiperparámetros para que tenga mejor rendimiento(más trabajo)
+
+Perceptrón:
+Pros:
+- Es un Modelo simple y mucho más rápido de entrenar. 
+- Tuvo mayor accuracy (71.10%) que SVM
+- Fue y es, fácil de implementar. 
+
+DESVENTAJAS:
+- Tuvo el peor F1-Score, 24.88%
+- Su recall tan bajo, 19.19%, nos dice que pierde muchos candidatos que sí cambiarán de trabajo.
+- Precision moderada (35.35%)
+- No sería una buena opción para patrones más complejos. 
+- Fue el más sensible para no normalizados, por mucho. 
+
+Red Neuronal:
+VENTAJAS:
+- Obtuvo el mejor F1-Score (51.97%) entre todos los modelos, inclusive con datos no tan normalizados o, algo que hablaré más adelante, sin variables derivadas de otras. 
+- Mejor rendimiento general según su accuracy de 77.67%
+- Es más confiable cuando predice cambio de trabajo, por su precisión de 55.71%
+- Aprendió relaciones no lineales complejas entre características
+
+DESVENTAJAS:
+- Tiene más complejidad computacional y tiempo de entrenamiento que otros modelos. 
+- Es el modelo más caja negra de los 3, menos interpretable me refiero. 
+
+
+======================
+Propuestas o Ideas:
+=======================
+
+- Buscaría la forma de usar los mejores parámetros para cada modelo, no digo que uno sea mejor que otro solo por que sí, cada uno debería tener una mejor optimización de hiperparámetros. 
+-Tal vez un pre procesamiento más exahustivo, ir cambiando y probando la mejor opción o investigar un poco más cuál sería la optima (usé label encoding , pero tal vez one hot encoding hubiera sido mejor opción para algunas variables)
+-Buscaría si hay variables redundantes para después, hacer una ingeniería de características, buscando crear nuevas, que tengan interacciones entre ellas. 
+
+Sí, Todos los modelos tienen margen de mejora, sería de adaptar los datos para cada uno en específico. 
