@@ -7,25 +7,29 @@ Tu tarea consiste en construir y comparar modelos de clasificación utilizando t
 distintos: SVM (Máquinas de Vectores de Soporte), Perceptrón (modelo lineal básico) y 
 una Red Neuronal Multicapa (MLP) empleando Keras o TensorFlow. Deberás interpretar sus 
 métricas para evaluar cuál modelo tiene mejor desempeño. 
+
 ● Usar el repositorio de Github Classroom: https://classroom.github.com/a/ET5E-kA0 
+
 ● Utiliza el dataset de Kaggle:   
-○ https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists 
-● Preprocesamiento: 
+
+--  https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists 
+
+## Preprocesamiento: 
 ○ Realizar limpieza de datos 
 ○ Tratamiento de valores faltantes  
 ○ Codificación de variables categóricas. 
+## Instrucciones
 ● Divide los datos en conjuntos de entrenamiento y prueba (70% - 30%) 
 ● Entrena un modelo con SVM utilizando scikit-learn. 
 ● Entrena un modelo con Perceptrón (sklearn.linear_model.Perceptron). 
-● Entrena una Red Neuronal básica (al menos 1 capa oculta) usando Keras o 
-TensorFlow. 
+● Entrena una Red Neuronal básica (al menos 1 capa oculta) usando Keras o TensorFlow. 
 ● Calcula las siguientes métricas en el conjunto de prueba: 
-● Accuracy 
-● Precision 
-● Recall 
-● F1-score 
+1. Accuracy 
+2. Precision 
+3. Recall 
+4. F1-score 
 ● Muestra las métricas en una tabla comparativa 
-○ Archivo csv en metrics/evaluation_report.csv 
+--Archivo csv en metrics/evaluation_report.csv 
 # Ejercicio Comparación de Modelos de Clasificación
 
 ## Estructura
@@ -61,4 +65,5 @@ pip install -r requirements.txt
 python src/main.py
 pytest tests
 ```
+
 
